@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Menu.css";
 import MenuRow from "./MenuRow/MenuRow";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -9,9 +9,30 @@ import Medicine from "../Details/Medicine";
 import CovidTestCenter from "../Details/CovidTestCenter";
 import HomeTreatment from "../Details/HomeTreatment";
 import Vaccine from "../Details/Vaccine";
-import Resource from "../AddResouce/resources"
+import Resource from "../AddResouce/resources";
+import Select from 'react-select';
 
 function Menu() {
+  const data = [
+    {value: 1,label: "All"},
+    {value: 2,label: "Dehli"},
+    {value: 3,label: "Mumbai"},
+    {value: 4,label: "Chennai"},
+    {value: 5,label: "Kolkata"},
+    {value: 6,label: "Lucknow"},
+    {value: 7,label: "Kanpur"},
+    {value: 8,label: "Bhopal"},
+    {value: 9,label: "Indore"}
+  ];
+   
+  const [selectedOption, setSelectedOption] = useState("All");
+  const [city,setcity] = useState("");
+
+  const handleChange = e => {
+    setSelectedOption(e);
+    setcity(e.label);
+  }
+
   return (
     <Router>
       <div className="menu">
@@ -21,9 +42,12 @@ function Menu() {
               <p>Resources</p>
             </div>
           </div>
-          <form action="">
-            <input type="text" id="input" placeholder="Search.." />
-          </form>
+          <Select
+        placeholder="Select City"
+        value={selectedOption}
+        options={data}
+        onChange={handleChange} 
+      />
         </div>
         <div className="lhs-body">
           <Link to="/">
