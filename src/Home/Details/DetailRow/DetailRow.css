@@ -1,0 +1,21 @@
+.detailRow {
+  border: 2px solid green;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 3px 11px -1px rgba(0, 0, 0, 0.75);
+}
+.detailRow:hover {
+  transform: scale(1.01);
+  transition: 0.3s;
+}
+#number {
+  text-align: right;
+}
+#address {
+  color: gray;
+  font-size: 0.9rem;
+}
+#verify {
+  color: green;
+}
