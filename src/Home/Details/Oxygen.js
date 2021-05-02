@@ -23,8 +23,8 @@ function Details(props) {
     {value: 10,label: "Others"}
   ];
    
-  const [selectedOption, setSelectedOption] = useState("All");
-  const [city,setcity] = useState("");
+  const [selectedOption, setSelectedOption] = useState("");
+  const [city,setcity] = useState("All");
   
   const handleChange = e => {
     setSelectedOption(e);
@@ -32,7 +32,6 @@ function Details(props) {
   }
 
   useEffect(() => {
-    setcity(props.city)
     console.log(props.city)
     db.collection("oxygen")
       .orderBy("city", "asc")
@@ -59,14 +58,24 @@ function Details(props) {
         {details.length==0?<div className="no-data"><p>!! SORRY NO DETAILS AVAILABLE !!</p></div>:
         details.map((node)=>{
           return(
-          <Row
-          shop={node.name}
-          address={node.address}
-          number={node.number}
-          resource={node.resource}
-          whatsapp={node.whatsapp}
-          city={node.city}/>
-        )})
+            <>
+            {console.log(city)}
+              {(city=="All")&& <Row
+              shop={node.name}
+              address={node.address}
+              number={node.number}
+              resource={node.resource}
+              whatsapp={node.whatsapp}
+              city={node.city}/>}
+
+              {(city!="All")&&(city!="")&&(node.city==city)&& <Row
+              shop={node.name}
+              address={node.address}
+              number={node.number}
+              resource={node.resource}
+              whatsapp={node.whatsapp}
+              city={node.city}/>}
+            </>)})
         }
       </div>
     </div>

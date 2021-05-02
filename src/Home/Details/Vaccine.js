@@ -63,12 +63,24 @@ function Details() {
         {details.length==0?<div className="no-data"><p>!! SORRY NO DETAILS AVAILABLE !!</p></div>:
         details.map((node)=>{
           return(
-          <Row
-          shop={node.name}
-          address={node.address}
-          number={node.number}
-          resource={node.resource}
-          whatsapp={node.whatsapp}/>
+            <>
+            {console.log(city)}
+              {(city=="All")&& <Row
+              shop={node.name}
+              address={node.address}
+              number={node.number}
+              resource={node.resource}
+              whatsapp={node.whatsapp}
+              city={node.city}/>}
+
+              {(city!="All")&&(city!="")&&(node.city==city)&& <Row
+              shop={node.name}
+              address={node.address}
+              number={node.number}
+              resource={node.resource}
+              whatsapp={node.whatsapp}
+              city={node.city}/>}
+            </>
         )})
         }
       </div>

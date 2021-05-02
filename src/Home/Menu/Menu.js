@@ -66,13 +66,13 @@ function Menu() {
               description="Covid 19 Home Treatment Step by Step."
             />
           </Link>
-          <Link to="/vaccine">
+          {/* <Link to="/vaccine">
             <MenuRow
               imgsrc={require("./MenuRow/Images/vaccine.jpeg").default}
               title="VACCINE CENTERS"
               description="Vaccine is a prevention not the cure.."
             />
-          </Link>
+          </Link> */}
           <Link to="/addresource">
             <MenuRow
               imgsrc={require("./MenuRow/Images/handshake.png").default}
