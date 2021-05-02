@@ -37,52 +37,9 @@
 form > input {
   background-color: #f1f1f1;
 }
-.details-body {
-  padding: 20px;
-  background-color: #f1f1f1;
-}
-.no-data {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 100px;
-  font-size: 2rem;
-  text-align: center;
-  filter: drop-shadow(0 0 0.2rem crimson);
-}
-#disclaimer {
-  filter: drop-shadow(0 0 0.2rem crimson);
-}
-.blocks {
-  display: flex;
-}
-.blocks > div {
-  flex: 0.5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  text-align: justify;
-}
-.blocks > div > img {
-  height: 200px;
-  width: 100%;
-}
-.span {
-  color: red;
-}
-.self {
-  margin: 10px;
-}
 @media only screen and (max-width: 1000px) {
   .header {
     width: 90%;
     background-color: #f6f6f6;
-  }
-  .no-data {
-    font-size: 1rem;
-  }
-  .blocks {
-    flex-direction: column;
   }
 }

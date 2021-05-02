@@ -69,6 +69,7 @@ function Resource() {
                     <label for="address">Provider resource type: </label>
                     <input type="text" id="rtype" name="resource" onChange={(event) => setresource(event.target.value)} value={resource}/><br/><br/>
                     <button variant="contained" onClick={newMessage}>Submit</button>
+                    <br/><br/>
         </fieldset>
             </div>
         </div>
