@@ -9,6 +9,7 @@ function Row(props) {
       <VerifiedUserIcon fontSize="small" id="verify"/>
       <h3>{props.shop}</h3>
       <p id="address">{props.address}</p>
+      <p id="city">{props.city}</p>
       <p id="number">Contact No. -: {props.number}</p>
       </div>
       <div className="contacts">

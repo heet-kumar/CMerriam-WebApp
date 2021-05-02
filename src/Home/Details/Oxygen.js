@@ -10,7 +10,7 @@ function Details() {
 
   useEffect(() => {
     db.collection("oxygen")
-      .orderBy("name", "asc")
+      .orderBy("city", "asc")
       .onSnapshot((snapshot) =>{
         setDetails(snapshot.docs.map((doc) => doc.data()));
       });
@@ -32,7 +32,7 @@ function Details() {
           number={node.number}
           resource={node.resource}
           whatsapp={node.whatsapp}
-          />
+          city={node.city}/>
         )})
         }
       </div>

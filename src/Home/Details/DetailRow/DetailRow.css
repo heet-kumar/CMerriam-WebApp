@@ -44,6 +44,10 @@ cursor: pointer;
   color: gray;
   font-size: 0.9rem;
 }
+#city{
+  color: gray;
+  font-size: 0.9rem;
+}
 #verify {
   color: green;
 }

@@ -31,7 +31,8 @@ function Details() {
           address={node.address}
           number={node.number}
           resource={node.resource}
-          whatsapp={node.whatsapp}/>
+          whatsapp={node.whatsapp}
+          city={node.city}/>
         )})
         }
       </div>
