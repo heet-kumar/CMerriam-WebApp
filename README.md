@@ -1,2 +1,2 @@
 ### `Hosted Website name`
-https://coronavirus-resource.web.app/
+https://covid-resources-94d93.web.app/
