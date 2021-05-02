@@ -9,6 +9,7 @@ import Medicine from "../Details/Medicine";
 import CovidTestCenter from "../Details/CovidTestCenter";
 import HomeTreatment from "../Details/HomeTreatment";
 import Vaccine from "../Details/Vaccine";
+import Resource from "../AddResouce/resources"
 
 function Menu() {
   return (
@@ -76,7 +77,7 @@ function Menu() {
           </Link>
           <Link to="/addresource">
             <MenuRow
-              imgsrc={require("./MenuRow/Images/vaccine.jpeg").default}
+              imgsrc={require("./MenuRow/Images/handshake.png").default}
               title="ADD RESOURCE"
               description="We need every helping hand possible.."
             />
@@ -91,7 +92,7 @@ function Menu() {
       <Route path="/covidtestcenter" exact component={CovidTestCenter} />
       <Route path="/hometreatment" exact component={HomeTreatment} />
       <Route path="/vaccine" exact component={Vaccine} />
-      {/* <Route path="/addresource" exact component={Resource} /> */}
+      <Route path="/addresource" exact component={Resource} />
     </Router>
   );
 }

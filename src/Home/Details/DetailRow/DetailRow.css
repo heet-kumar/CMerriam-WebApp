@@ -5,12 +5,40 @@
   margin-bottom: 10px;
   box-shadow: 0px 3px 11px -1px rgba(0, 0, 0, 0.75);
 }
+
+.flex{
+  display: flex;
+  flex-direction: row;
+  width:100%;
+  height:fit-content;
+  justify-content: space-between;
+}
+
+.icon{
+cursor: pointer;
+}
+
+.text{
+  display: flex;
+   flex-direction: column;
+   overflow: hidden;
+   height: fit-content;
+   margin:0.3rem;
+}
+
+.contacts{
+   display: flex;
+   flex-direction: column;
+   height: fit-content;
+   margin:0.3rem;
+}
+
 .detailRow:hover {
   transform: scale(1.01);
   transition: 0.3s;
 }
 #number {
-  text-align: right;
+  text-align: left;
 }
 #address {
   color: gray;
@@ -18,4 +46,16 @@
 }
 #verify {
   color: green;
+}
+
+@media  screen and (max-width:475px)  {
+  .flex{
+    flex-direction: column;
+  }
+  .contacts{
+    flex-direction: row;
+  }
+  .icon{
+    margin: 0.3rem;
+  }
 }

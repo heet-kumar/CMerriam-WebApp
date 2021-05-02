@@ -4,7 +4,18 @@
   overflow: scroll;
   padding-bottom: 20px;
   background-color: #f6f6f6;
+  overflow-x: hidden;
 }
+@media  screen and (max-width:475px) {
+  .details::-webkit-scrollbar {
+    display: none;
+  }
+  .details {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+  }  
+}
+
 .header {
   z-index: 1;
   background-color: white;

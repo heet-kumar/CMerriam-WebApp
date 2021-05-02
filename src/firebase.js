@@ -1,5 +1,4 @@
-
-import firebase from "firebase";
+ import firebase from "firebase";
 
 // const firebaseConfig={
 //   apiKey:"AIzaSyDBvyyqdV630DffF6sVYP6v3TZWZjHxamg",
@@ -11,15 +10,15 @@ import firebase from "firebase";
 //   appId:"1:506461386312:web:45f666e6778fed26d9ca7d",
 //   measurementId:"G-HVDGKL164W"
 // }
-
+console.log(process.env.PROJECT_ID)
 const firebaseConfig = {
-    apiKey: "AIzaSyB87RcxV2EfE6Bl1L1hDtwnygPKv6oUrnQ",
-    authDomain: "covid-resources-94d93.firebaseapp.com",
-    databaseURL: "https://covid-resources-94d93-default-rtdb.firebaseio.com",
-    projectId: "covid-resources-94d93",
-    storageBucket: "covid-resources-94d93.appspot.com",
-    messagingSenderId: "105314665680",
-    appId: "1:105314665680:web:d0fd2ffe2d9ad214d84ad5"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_DB_URL,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGE_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID
   };
 
 const firebaseApp=firebase.initializeApp(firebaseConfig);

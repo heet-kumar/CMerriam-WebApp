@@ -10,7 +10,7 @@ function Details() {
 
   useEffect(() => {
     db.collection("covidtestcenter")
-      .orderBy("Name", "asc")
+      .orderBy("name", "asc")
       .onSnapshot((snapshot) =>{
         setDetails(snapshot.docs.map((doc) => doc.data()));
       });
@@ -22,14 +22,16 @@ function Details() {
         <p>COVID TEST CENTER</p>
         
       </div>
-      <div className="details-body no-data">
-        {details.length==0?<p>!! SORRY NO DETAILS AVAILABLE !!</p>:
+      <div className="details-body">
+        {details.length==0?<div className="no-data"><p>!! SORRY NO DETAILS AVAILABLE !!</p></div>:
         details.map((node)=>{
           return(
           <Row
-          shop={node.Name}
+          shop={node.name}
           address={node.address}
-          number={node.number}/>
+          number={node.number}
+          resource={node.resource}
+          whatsapp={node.whatsapp}/>
         )})
         }
       </div>
