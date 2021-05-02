@@ -13,6 +13,7 @@ import Resource from "../AddResouce/resources";
 import Select from 'react-select';
 
 function Menu() {
+  
   const data = [
     {value: 1,label: "All"},
     {value: 2,label: "Dehli"},
@@ -22,12 +23,13 @@ function Menu() {
     {value: 6,label: "Lucknow"},
     {value: 7,label: "Kanpur"},
     {value: 8,label: "Bhopal"},
-    {value: 9,label: "Indore"}
+    {value: 9,label: "Indore"},
+    {value: 10,label: "Others"}
   ];
    
   const [selectedOption, setSelectedOption] = useState("All");
   const [city,setcity] = useState("");
-
+  
   const handleChange = e => {
     setSelectedOption(e);
     setcity(e.label);
@@ -42,20 +44,20 @@ function Menu() {
               <p>Resources</p>
             </div>
           </div>
-          <Select
-        placeholder="Select City"
-        value={selectedOption}
-        options={data}
-        onChange={handleChange} 
-      />
-        </div>
+           <Select
+            placeholder="Select City"
+            value={selectedOption}
+            options={data}
+            onChange={handleChange} />
+          </div>
         <div className="lhs-body">
           <Link to="/">
             <MenuRow
               imgsrc={require("./MenuRow/Images/oxygen.jpeg").default}
               title="OXYGEN"
-              description="Find Resources that provide  Oxygen"
+              description="Find Resources that provide Oxygen"
             />
+            </Link>
             <Link to="/ambulance">
               <MenuRow
                 imgsrc={require("./MenuRow/Images/ambulance.jpeg").default}
@@ -63,7 +65,6 @@ function Menu() {
                 description="Find Resources that provide Ambulance"
               />
             </Link>
-          </Link>
           <Link to="/plasma">
             <MenuRow
               imgsrc={require("./MenuRow/Images/plasma.jpg").default}

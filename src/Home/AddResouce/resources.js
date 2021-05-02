@@ -11,14 +11,15 @@ function Resource() {
     const [city, setcity] = useState("");
 
     const data = [
-      {value: 2,label: "Dehli"},
-      {value: 3,label: "Mumbai"},
-      {value: 4,label: "Chennai"},
-      {value: 5,label: "Kolkata"},
-      {value: 6,label: "Lucknow"},
-      {value: 7,label: "Kanpur"},
-      {value: 8,label: "Bhopal"},
-      {value: 9,label: "Indore"}
+      {value: 1,label: "Dehli"},
+      {value: 2,label: "Mumbai"},
+      {value: 3,label: "Chennai"},
+      {value: 4,label: "Kolkata"},
+      {value: 5,label: "Lucknow"},
+      {value: 6,label: "Kanpur"},
+      {value: 7,label: "Bhopal"},
+      {value: 8,label: "Indore"},
+      {value: 9,label: "Others"}
     ];
     
     const handleChange = e => {
@@ -48,8 +49,10 @@ function Resource() {
 
     return (
         <div className="resource">
+          
             <div className="header">
-                <fieldset>
+              Add Resources <br/><br/>
+                <fieldset><br/>
                     <label for="name">Provider Name: </label>
                     <input type="text" id="name" required name="name" onChange={(event) => setname(event.target.value)} value={name} /><br/><br/>
                     <label for="address">Provider Address: </label>

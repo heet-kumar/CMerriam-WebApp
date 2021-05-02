@@ -4,11 +4,13 @@ import Row from "./DetailRow/DetailRow";
 import db from "../../firebase.js";
 import firebase from "firebase";
 
-function Details() {
+function Details(props) {
 
   const [details, setDetails] = useState([]);
-
+  const [city,setcity] =useState ("")
   useEffect(() => {
+    setcity(props.city)
+    console.log(props.city)
     db.collection("oxygen")
       .orderBy("city", "asc")
       .onSnapshot((snapshot) =>{
