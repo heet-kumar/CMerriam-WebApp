@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import db from '../../firebase' 
 import Select from 'react-select';
 
@@ -9,7 +9,7 @@ function Resource() {
     const [resource,setresource] = useState("")
     const [whatsapp,setwhatsapp] =useState("")
     const [city, setcity] = useState("");
-
+    
     const data = [
       {value: 1,label: "Dehli"},
       {value: 2,label: "Mumbai"},
@@ -22,15 +22,28 @@ function Resource() {
       {value: 9,label: "Others"}
     ];
     
+    const data1 = [
+      {value: 1,label: "oxygen"},
+      {value: 2,label: "ambulance"},
+      {value: 3,label: "plasma"},
+      {value: 4,label: "medicine"},
+      {value: 5,label: "covidtestcenter"}
+    ];
+
     const handleChange = e => {
       setcity(e);
+    }
+
+    const handleChangeresource = f => {
+      console.log(f)
+      setresource(f);
     }
 
     const newMessage = () => {
          
         console.log(name," ",address," ",number," ",resource," ",whatsapp)
-        if ((name.trim() !== "") || (address.trim !== "") || (number.trim !== "") || (resource.trim !== "") || (whatsapp.trim !== "") || (city !== "")) {
-          db.collection(resource).add({
+        if ((name.trim() !== "") && (address.trim !== "") && (number.trim !== "") && (resource.trim !== "") && (whatsapp.trim !== "") && (city !== "")) {
+          db.collection(resource.label).add({
             name: name,
             address: address,
             resource: resource,
@@ -59,7 +72,7 @@ function Resource() {
                     <input type="text" id="address" required name="address" onChange={(event) => setaddress(event.target.value)} value={address} /><br/><br/>
                     <label for="address">Provider Contact: </label>
                     <input type="text" id="number" name="number" onChange={(event) => setnumber(event.target.value)} value={number} /><br/><br/>
-                    <div>
+                    <div style={{margin:'0rem 0.9rem'}}>
                     <Select
                     placeholder="Select City"
                     value={city}
@@ -68,9 +81,15 @@ function Resource() {
                     </div>
                     <label for="address">Provider Whatsapp: </label>
                     <input type="text" id="whatsapp" name="whatsapp" onChange={(event) => setwhatsapp(event.target.value)} value={whatsapp}/><br/><br/>
-                    <label for="address">Provider resource type: </label>
-                    <input type="text" id="rtype" name="resource" onChange={(event) => setresource(event.target.value)} value={resource}/><br/><br/>
-                    <button variant="contained" onClick={newMessage}>Submit</button>
+                    <div style={{margin:'0rem 0.9rem'}}>
+                    <Select
+                    placeholder="Select Resource"
+                    value={resource}
+                    options={data1}
+                    onChange={handleChangeresource} />
+                    </div><br/>
+
+                    <button className="button"  variant="contained" onClick={newMessage}>Submit</button>
                     <br/><br/>
         </fieldset>
             </div>
