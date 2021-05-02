@@ -2,7 +2,6 @@ import React , {useState,useEffect} from "react";
 import "./Details.css";
 import Row from "./DetailRow/DetailRow";
 import db from "../../firebase.js";
-import firebase from "firebase";
 import Select from 'react-select';
 
 

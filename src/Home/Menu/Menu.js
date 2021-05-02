@@ -8,7 +8,6 @@ import Plasma from "../Details/Plasma";
 import Medicine from "../Details/Medicine";
 import CovidTestCenter from "../Details/CovidTestCenter";
 import HomeTreatment from "../Details/HomeTreatment";
-import Vaccine from "../Details/Vaccine";
 import Resource from "../AddResouce/resources";
 
 function Menu() {
@@ -66,13 +65,6 @@ function Menu() {
               description="Covid 19 Home Treatment Step by Step."
             />
           </Link>
-          {/* <Link to="/vaccine">
-            <MenuRow
-              imgsrc={require("./MenuRow/Images/vaccine.jpeg").default}
-              title="VACCINE CENTERS"
-              description="Vaccine is a prevention not the cure.."
-            />
-          </Link> */}
           <Link to="/addresource">
             <MenuRow
               imgsrc={require("./MenuRow/Images/handshake.png").default}
@@ -89,7 +81,6 @@ function Menu() {
       <Route path="/medicine" exact component={Medicine} />
       <Route path="/covidtestcenter" exact component={CovidTestCenter} />
       <Route path="/hometreatment" exact component={HomeTreatment} />
-      <Route path="/vaccine" exact component={Vaccine} />
       <Route path="/addresource" exact component={Resource} />
     </Router>
   );
