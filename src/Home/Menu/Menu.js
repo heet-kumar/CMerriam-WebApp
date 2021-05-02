@@ -44,12 +44,7 @@ function Menu() {
               <p>Resources</p>
             </div>
           </div>
-           <Select
-            placeholder="Select City"
-            value={selectedOption}
-            options={data}
-            onChange={handleChange} />
-          </div>
+           </div>
         <div className="lhs-body">
           <Link to="/">
             <MenuRow

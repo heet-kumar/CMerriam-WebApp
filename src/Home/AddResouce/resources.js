@@ -59,11 +59,13 @@ function Resource() {
                     <input type="text" id="address" required name="address" onChange={(event) => setaddress(event.target.value)} value={address} /><br/><br/>
                     <label for="address">Provider Contact: </label>
                     <input type="text" id="number" name="number" onChange={(event) => setnumber(event.target.value)} value={number} /><br/><br/>
+                    <div>
                     <Select
                     placeholder="Select City"
                     value={city}
                     options={data}
                     onChange={handleChange} /><br/>
+                    </div>
                     <label for="address">Provider Whatsapp: </label>
                     <input type="text" id="whatsapp" name="whatsapp" onChange={(event) => setwhatsapp(event.target.value)} value={whatsapp}/><br/><br/>
                     <label for="address">Provider resource type: </label>

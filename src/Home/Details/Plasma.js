@@ -3,9 +3,33 @@ import "./Details.css";
 import Row from "./DetailRow/DetailRow";
 import db from "../../firebase.js";
 import firebase from "firebase";
+import Select from 'react-select';
+
 
 function Details() {
   const [details, setDetails] = useState([]);
+
+  const data = [
+    {value: 1,label: "All"},
+    {value: 2,label: "Dehli"},
+    {value: 3,label: "Mumbai"},
+    {value: 4,label: "Chennai"},
+    {value: 5,label: "Kolkata"},
+    {value: 6,label: "Lucknow"},
+    {value: 7,label: "Kanpur"},
+    {value: 8,label: "Bhopal"},
+    {value: 9,label: "Indore"},
+    {value: 10,label: "Others"}
+  ];
+   
+  const [selectedOption, setSelectedOption] = useState("All");
+  const [city,setcity] = useState("");
+  
+  const handleChange = e => {
+    setSelectedOption(e);
+    setcity(e.label);
+  }
+
 
   useEffect(() => {
     db.collection("plasma")
@@ -20,6 +44,15 @@ function Details() {
     <div className="details">
       <div className="header">
         <p>PLASMA</p>
+      </div>
+      <div style={{display: 'flex',width:'100%', flexDirection: 'column',alignItems: 'center'}}>
+      <div style={{width:'315px'}}>
+      <Select
+            placeholder="Select City"
+            value={selectedOption}
+            options={data}
+            onChange={handleChange} />
+      </div>
       </div>
       <div className="details-body">
         {details.length==0?<div className="no-data"><p>!! SORRY NO DETAILS AVAILABLE !!</p></div>:
