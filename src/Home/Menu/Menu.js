@@ -10,31 +10,9 @@ import CovidTestCenter from "../Details/CovidTestCenter";
 import HomeTreatment from "../Details/HomeTreatment";
 import Vaccine from "../Details/Vaccine";
 import Resource from "../AddResouce/resources";
-import Select from 'react-select';
 
 function Menu() {
   
-  const data = [
-    {value: 1,label: "All"},
-    {value: 2,label: "Dehli"},
-    {value: 3,label: "Mumbai"},
-    {value: 4,label: "Chennai"},
-    {value: 5,label: "Kolkata"},
-    {value: 6,label: "Lucknow"},
-    {value: 7,label: "Kanpur"},
-    {value: 8,label: "Bhopal"},
-    {value: 9,label: "Indore"},
-    {value: 10,label: "Others"}
-  ];
-   
-  const [selectedOption, setSelectedOption] = useState("All");
-  const [city,setcity] = useState("");
-  
-  const handleChange = e => {
-    setSelectedOption(e);
-    setcity(e.label);
-  }
-
   return (
     <Router>
       <div className="menu">
