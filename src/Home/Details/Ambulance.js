@@ -22,7 +22,7 @@ function Details() {
     {value: 9,label: "Indore"},
     {value: 10,label: "Others"}
   ];
-   
+  let c=0;
   const [selectedOption, setSelectedOption] = useState("All");
   const [city,setcity] = useState("All");
   
@@ -66,7 +66,7 @@ function Details() {
           whatsapp={node.whatsapp}
           city={node.city}/>}
 
-          {(city!="All")&&(city!="")&&(node.city==city)&& <Row
+          {(city!="All")&&(city!="")&&(node.city==city)&&<Row
           shop={node.name}
           address={node.address}
           number={node.number}

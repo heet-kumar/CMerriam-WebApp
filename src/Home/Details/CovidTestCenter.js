@@ -24,7 +24,7 @@ function Details() {
   ];
    
   const [selectedOption, setSelectedOption] = useState("All");
-  const [city,setcity] = useState("");
+  const [city,setcity] = useState("All");
   
   const handleChange = e => {
     setSelectedOption(e);
@@ -59,7 +59,6 @@ function Details() {
         details.map((node)=>{
           return(
             <>
-            {console.log(city)}
               {(city=="All")&& <Row
               shop={node.name}
               address={node.address}

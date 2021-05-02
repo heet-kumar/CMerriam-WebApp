@@ -130,7 +130,7 @@ function Details() {
               Oxygen flow rate can be increased from 6 litres/minute to 10
               litre/minute
             </li>
-            <li>Sleeep in prone position(stomach down)</li>
+            <li>Sleep in prone position(stomach down)</li>
           </ul>
           <br />
           <br />
@@ -145,59 +145,6 @@ function Details() {
         </div>
         <br />
         <br />
-        <h2>LIST OF DRUGS THAT ARE NOT VERY USEFUL IN CRITICAL CASE</h2>
-        <ul>
-          <li>
-            Azithromycin.{" "}
-            <a
-              href="https://pharmaceutical-journal.com/article/news/azithromycin-and-doxycycline-should-not-be-used-in-the-management-of-covid-19-dhsc-advises#:~:text=The%20antibiotics%20azithromycin%20and%20doxycycline,Care%20(DHSC)%20has%20advised."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read More..
-            </a>
-          </li>
-          <li>
-            Doxycycline{" "}
-            <a
-              href="https://pharmaceutical-journal.com/article/news/azithromycin-and-doxycycline-should-not-be-used-in-the-management-of-covid-19-dhsc-advises#:~:text=The%20antibiotics%20azithromycin%20and%20doxycycline,Care%20(DHSC)%20has%20advised"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read More..
-            </a>
-          </li>
-          <li>
-            Ivermectin{" "}
-            <a
-              href="https://www.covid19treatmentguidelines.nih.gov/antiviral-therapy/ivermectin/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read More..
-            </a>
-          </li>
-          <li>
-            Hydroxychloroquine{" "}
-            <a
-              href="https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19-hydroxychloroquine"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read More..
-            </a>
-          </li>
-          <li>
-            Remdesivir{" "}
-            <a
-              href="https://www.altnews.in/remdesivir-is-not-effective-against-covid-19-pooled-research-from-four-trials-shows/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read More..
-            </a>
-          </li>
-        </ul>
       </div>
     </div>
   );

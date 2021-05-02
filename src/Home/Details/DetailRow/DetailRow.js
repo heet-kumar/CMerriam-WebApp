@@ -14,7 +14,7 @@ function Row(props) {
       </div>
       <div className="contacts">
          <div className="icon">
-         <a  href={`tel:+${ props.number}`}>
+         <a  href={`tel:+91${ props.number}`}>
            <img src="https://th.bing.com/th/id/Reaa6b18a59023f1009b4e3bc2be606af?rik=vkKpQYVNPw5Mlw&riu=http%3a%2f%2fwww.newdesignfile.com%2fpostpic%2f2013%2f10%2ftelephone-phone-icon_213730.png&ehk=zYgdJMEBqViem8vrUsjehA5klWkLA5eIv07%2fV6O%2fDQ8%3d&risl=&pid=ImgRaw" width="50px" height="50px"></img>
          </a>
          </div>

@@ -46,7 +46,7 @@ function Resource() {
           db.collection(resource.label).add({
             name: name,
             address: address,
-            resource: resource,
+            resource: resource.label,
             whatsapp: whatsapp,
             number: number,
             city:city.label
