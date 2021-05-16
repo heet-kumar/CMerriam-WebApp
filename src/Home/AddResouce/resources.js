@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import db from '../../firebase' 
 import Select from 'react-select';
+import SelectInput from '@material-ui/core/Select/SelectInput';
 
 function Resource() {
     const [name,setname] = useState("")
@@ -9,7 +10,8 @@ function Resource() {
     const [resource,setresource] = useState("")
     const [whatsapp,setwhatsapp] =useState("")
     const [city, setcity] = useState("");
-    
+    const [showerror,setshowerror] = useState(false);
+
     const data = [
       {value: 1,label: "Dehli"},
       {value: 2,label: "Mumbai"},
@@ -19,7 +21,8 @@ function Resource() {
       {value: 6,label: "Kanpur"},
       {value: 7,label: "Bhopal"},
       {value: 8,label: "Indore"},
-      {value: 9,label: "Others"}
+      {value: 9,label: "Jhansi"},
+      {value: 10,label: "Others"}
     ];
     
     const data1 = [
@@ -27,7 +30,8 @@ function Resource() {
       {value: 2,label: "ambulance"},
       {value: 3,label: "plasma"},
       {value: 4,label: "medicine"},
-      {value: 5,label: "covidtestcenter"}
+      {value: 5,label: "covidtestcenter"},
+      // {value: 6,label: "beds"}
     ];
 
     const handleChange = e => {
@@ -42,7 +46,7 @@ function Resource() {
     const newMessage = () => {
          
         console.log(name," ",address," ",number," ",resource," ",whatsapp)
-        if ((name.trim() !== "") && (address.trim !== "") && (number.trim !== "") && (resource.trim !== "") && (whatsapp.trim !== "") && (city !== "")) {
+        if ((name.trim() !== "") && (address.trim !== "") && (number.trim !== "") && (resource.trim !== "") && (whatsapp.trim !== "") && (city !== "") && (whatsapp.length<=10) &&  (number.length<=10)) {
           db.collection(resource.label).add({
             name: name,
             address: address,
@@ -58,6 +62,7 @@ function Resource() {
           setwhatsapp("");
           setcity("");
         }
+        else{ setshowerror(true); setTimeout(()=>{setshowerror(false)},5000)}
       };
 
     return (
@@ -71,7 +76,7 @@ function Resource() {
                     <label for="address">Provider Address: </label>
                     <input type="text" id="address" required name="address" onChange={(event) => setaddress(event.target.value)} value={address} /><br/><br/>
                     <label for="address">Provider Contact: </label>
-                    <input type="text" id="number" name="number" onChange={(event) => setnumber(event.target.value)} value={number} /><br/><br/>
+                    <input type="tel" id="number" name="number" pattern="^\d{3}-\d{3}-\d{4}$" required="required" onChange={(event) => setnumber(event.target.value)} value={number} /><br/><br/>
                     <div style={{margin:'0rem 0.9rem'}}>
                     <Select
                     placeholder="Select City"
@@ -80,7 +85,7 @@ function Resource() {
                     onChange={handleChange} /><br/>
                     </div>
                     <label for="address">Provider Whatsapp: </label>
-                    <input type="text" id="whatsapp" name="whatsapp" onChange={(event) => setwhatsapp(event.target.value)} value={whatsapp}/><br/><br/>
+                    <input type="tel" id="whatsapp" name="whatsapp" pattern="^\d{3}-\d{3}-\d{4}$" required="required" onChange={(event) => setwhatsapp(event.target.value)} value={whatsapp}/><br/><br/>
                     <div style={{margin:'0rem 0.9rem'}}>
                     <Select
                     placeholder="Select Resource"
@@ -91,6 +96,8 @@ function Resource() {
 
                     <button className="button"  variant="contained" onClick={newMessage}>Submit</button>
                     <br/><br/>
+
+                    {showerror && <p>There is a problem in the form. Please check the enteries</p>}
         </fieldset>
             </div>
         </div>
